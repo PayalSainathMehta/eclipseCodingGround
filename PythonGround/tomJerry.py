@@ -1,10 +1,6 @@
 #!/bin/python3
 
-import math
-import os
-import random
-import re
-import sys
+
 
 
 
@@ -16,8 +12,24 @@ import sys
 #
 
 def play(arr):
-    return sorted(arr)
+    l = []
+    for i in range(len(arr[0])):
+        for j in range(len(arr)):
+            l.append(arr[j][i])
             
+    s = set(l)
+    l = list(s)
+    l = sorted(l, reverse = True)
+    
+    T = 0
+    J = 0
+    for i in range(len(l)):
+        if i%2 == 0:
+            T = T + l[i]
+        else:
+            J = J + l[i]
+            
+    return T-J
+        
 
-
-print(play([3,7,5,3,4,5][4,5,2,6,5,4][7,4,9,7,8,3]))
+print(play([[3,7],[4,4],[7,3]]))
