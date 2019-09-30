@@ -1,16 +1,13 @@
 def removeAdjacentKDuplicates(S,k):
-    res = []
+    stack = [['#',0]]
     for c in S:
-        count = 0
-        if res and res[-1] == c:
-            count = count + 1
-            if count == k:
-                res.pop()
-            else:
-                res.append(c)
+        if stack[-1][0] == c:
+            stack[-1][1] = stack[-1][1] + 1
+            if stack[-1][1] == k:
+                stack.pop()
         else:
-            res.append(c)
-    return "".join(res)
+            stack.append([c,1])
+    return "".join(c * k for c,k in stack)
     
 
 print(removeAdjacentKDuplicates('aabaccca',3))
