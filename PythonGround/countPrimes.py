@@ -1,16 +1,16 @@
+import math
 def countPrimes(n):
-    count = 0
-    flag = False
-    for i in range(2,n+1):
-        for j in range(2,i//2+1):
-            if i%j == 0:
-                flag = True
-                break
-            else:
-                break
-        if flag == False:
-            count = count + 1     
-    return count
-        
-        
+   prime = [True] * n
+   if n < 2:
+       return 0
+   else:
+       prime[0] = prime[1] = False
+       for i in range(2, int(math.sqrt(n)) + 1):
+           if prime[i]:
+               for j in range(i * i, n, i):
+                   prime[j] = False
+       return sum(prime)
+
+
+
 print(countPrimes(10))
