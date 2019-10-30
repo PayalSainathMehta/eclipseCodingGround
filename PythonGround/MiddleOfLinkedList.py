@@ -36,7 +36,7 @@ def listNodeToString(node):
 
     result = ""
     while node:
-        result += str(node) + ", "
+        result += str(node.val) + ", "
         node = node.next
     return "[" + result[:-2] + "]"
 
