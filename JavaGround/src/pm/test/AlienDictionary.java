@@ -26,7 +26,7 @@ public class AlienDictionary {
     			if(!dfs(sb,visited,adj,i))
     				return "";
     	}
-    	return sb.reverse().toString();
+    	return sb.toString();
      }
     
     
@@ -54,8 +54,8 @@ public class AlienDictionary {
     			visited[c - 'a'] = 0; //since this character exists
     		if(i > 0) //if on second word. compare characters of first two words
     		{
-    			String word1 = words[i - 1];
-        		String word2 = words[i];
+    			String word1 = words[i];
+        		String word2 = words[i - 1];
         		int minLength = Math.min(word1.length(), word2.length());
         		for(int j = 0; j < minLength; j++) 
         		{
