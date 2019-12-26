@@ -20,8 +20,8 @@ public class LongestCommonPrefix {
 		//If they are not, i calculate the mid of the list 
 		int mid = (l+r)/2;
 		//I then recursively call myself on left and right parts.
-		String left = longestCommonPrefix(strs, l, mid);
-		String right = longestCommonPrefix(strs,mid+1,r);
+		String left = longestCommonPrefix(strs, l, mid); //flower
+		String right = longestCommonPrefix(strs,mid+1,r); //flow
 		//Finally i return the common prefix of my child nodes.
 		return commonPrefix(left,right);
 		
@@ -30,11 +30,11 @@ public class LongestCommonPrefix {
 	public static String commonPrefix(String left, String right) {
 		//I find out the smallest of the strings passed to me and then traverse till that position in both strings and once i find something 
 		//that does not match, i stop and return upto that length.
-		int min = Math.min(left.length(), right.length());
-		for(int i = 0; i < min; i++)
+		int minLength = Math.min(left.length(), right.length()); //4
+		for(int i = 0; i < minLength; i++) //0 to 3
 			if(left.charAt(i) != right.charAt(i))
 				return left.substring(0, i);
-	    return left.substring(0, min);
+	    return left.substring(0, minLength);
 
 	}
 	
