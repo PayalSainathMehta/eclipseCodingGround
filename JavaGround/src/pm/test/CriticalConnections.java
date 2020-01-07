@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CriticalConnections {
+	 
 	 private int startTime = 1;
 	 public List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
 		 	if(connections == null) return null;
@@ -33,7 +34,7 @@ public class CriticalConnections {
 		 //main condition - if visited time of me is less than minimum visited time of all my neighbors
 		 // then am the articulation point - am the critical point.
 		 //add me to the critical connections.
-		 if(visitedTime[current] <= minVisitedTimeOfAllNeighbors)
+		 if(visitedTime[current] <= minVisitedTimeOfAllNeighbors && parent != -1)
 			 criticalConnections.add(Arrays.asList(parent, current));
 		 //return whoever visited time is minimum - meaning we now need to find its neighbors and continue.
 		 return Math.min(minVisitedTimeOfAllNeighbors, visitedTime[current]);
