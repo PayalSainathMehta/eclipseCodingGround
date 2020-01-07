@@ -15,7 +15,7 @@ public class CircularListPetrolPump {
 			while(i != j && current < 0) {
 				//definitely the first difference was negative so going inside for i = 0
 				current = current - (a[i][0] - a[i][1]);
-				i = (i + 1) % 
+				i = (i + 1) %
 				
 				if(i == 0)
 					return -1;
