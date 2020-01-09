@@ -10,15 +10,15 @@ public class CuttingRibbons {
 		int h = maximum;
 		while( l <= h) {
 			int mid = l + (h - l) / 2;
-			int len = getLength(arr,mid);
-			if(len >= k) l = mid + 1;
+			int count = getCount(arr,mid);
+			if(count >= k) l = mid + 1;
 			else h = mid - 1;
 		}
 		return h;
 	}
 	
 	
-	public static int getLength(int[] arr, int target) {
+	public static int getCount(int[] arr, int target) {
 		int res = 0;
 		for(int a: arr)
 			res = res + a/target;
