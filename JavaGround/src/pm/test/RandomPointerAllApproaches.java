@@ -29,7 +29,7 @@ public class RandomPointerAllApproaches {
 		LNode curr = head;
 		//First pass - make clones
 		while(curr != null) {
-			mp.put(curr, new LNode(curr.val, null, null));
+			mp.put(curr, new LNode(curr.val,null,null));
 			curr = curr.next;
 		}
 		
