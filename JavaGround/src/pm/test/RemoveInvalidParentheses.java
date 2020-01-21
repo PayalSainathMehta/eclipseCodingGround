@@ -17,7 +17,7 @@ public class RemoveInvalidParentheses {
 			 if(s.charAt(i) == par[0]) count++;
 			 if(s.charAt(i) == par[1]) count--;
 			 //IF COUNT IS POSITIVE, THAT MEANS NUMBER OF OPENING BRACKETS IS MORE. WE JUST CONTINUE.
-			 // IF COUNT SAME, THE NUMBER IS SAME.
+			 // IF COUNT 0, THE NUMBER IS SAME.
 			 if(count >= 0) continue;
 			 //NOW WHEN THE COUNT BECOMES NEGATIVE, THAT IS THERE IS ATLEAST ONE EXTRA CLOSING BRACKET.
 			 for(int j = last_j; j <= i; j++)
