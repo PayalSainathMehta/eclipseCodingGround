@@ -27,7 +27,7 @@ public class ThreeSum {
     				while(left < nums.length && nums[left] == leftVal) 
     					left++;
     				int rightVal = nums[right];
-    				while(right > left && nums[right] == rightVal) 
+    				while(left < right && nums[right] == rightVal) 
     					right--;
     			}
     			else if (sum < 0)
@@ -40,6 +40,15 @@ public class ThreeSum {
     	
     	return result;
     } 	
+    
+    
+    public static void main(String args[]) {
+    	ThreeSum obj = new ThreeSum();
+    	int[] nums = {-1,0,1,2,-1,-4};
+    	List<List<Integer>> result = new ArrayList<>();
+    	result = obj.threeSum(nums);
+    	System.out.println(result.toString());
+    }
     
 
 }
