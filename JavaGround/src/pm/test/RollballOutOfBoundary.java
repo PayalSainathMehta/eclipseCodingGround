@@ -24,7 +24,7 @@ public class RollballOutOfBoundary {
 					}
 				}
 			}
-			//temp stores the kth move while count stores the k-1th move
+			//temp stores the kth move while count stores the (k-1)th move
 			count = temp;
 		}
 		return result;
