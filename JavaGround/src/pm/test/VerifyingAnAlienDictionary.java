@@ -11,13 +11,16 @@ public class VerifyingAnAlienDictionary {
         //index = [5, 6, 7, 4, 8, 9, 10, 11, 12, 13, 14, 3, 15, 16, 1, 17, 18, 2, 19, 20, 21, 22, 0, 23, 24, 25]
         //System.out.println(Arrays.toString(index));
         search:
-        	for(int i = 0; i < words.length-1; i++) 
+        	for(int i = 1; i < words.length-1; i++) 
         	{
-	        	String word1 = words[i];
-	        	String word2 = words[i + 1];
+	        	String word1 = words[i-1]; //word comes before
+	        	String word2 = words[i]; //word comes later
 	        	for(int k = 0; k < Math.min(word1.length(), word2.length()); k++)
 	        		{
+	        			//if both characters are different
 	        			if(word1.charAt(k) != word2.charAt(k)) {
+	        				//and if actually the character of first word comes after character of second word in original language,
+	        				//then incorrect. as it should have been opposite.
 	        				if(index[word1.charAt(k) - 'a'] > index[word2.charAt(k) - 'a'])
 	            				return false;
 	            			continue search;
