@@ -16,7 +16,7 @@ class ExamRoom {
 			this.y = y;
 			if(x==-1) this.dist = y;
 			else if(y == N) this.dist = N - 1 - x;
-			else this.dist = Math.abs(x - y)/2;
+			else this.dist = Math.a	bs(x - y)/2;
 		}
 	}
 	
